@@ -1,1 +1,53 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
 
+\title{Scale Uncert Choice}
+\author{Thiziri AMEZZA}
+\date{September 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+We are facing an issue with scale uncertainties in EFT VBF HH4b analysis. Let me break down the problem and proposed solution:
+
+\subsection{\textbf{The Core Problem}}
+
+We have two different Monte Carlo sample types with different dynamic scale choices:
+
+Kappa samples: Use dynamic scale = -1 (MadGraph default)
+EFT samples: Use dynamic scale = 2 (needed for interference-type samples)
+
+
+These different scale choices define what counts as the "nominal" value $(\mu_R = 1, \mu_F=1)$ in each sample. While the standard 7-point scale variation should theoretically cover uncertainties from different scale choices. But Anna found evidence it may not be sufficient for VBF samples: At truth level, comparing SM samples produced with these two different scales shows a 20% difference in cross-section, but the standard 7-point scale uncertainty is only 14-15%. This suggests the standard approach underestimates the true scale uncertainty.
+
+
+\subsection{\textbf{The Proposed Solution}}
+
+1.  **Test at reconstruction level:** Compare the kappa SM sample with EFT SM sample at their nominal weights to quantify the difference at reco level
+2. **Account for sample differences:** Handle the fact that EFT samples have boosted filters while kappa samples don't
+3.  **Enhanced uncertainty calculation:**
+
+\begin{itemize}
+    \item For SM samples: Include the kappa SM sample directly as an additional weight in the envelope calculation
+    \item For EFT samples: Apply the relative difference found in the SM comparison as an additional flat uncertainty (nominal × (1 ± relative uncertainty))
+\end{itemize}
+
+This is a reasonable approach to address a real methodological concern. The team has identified that standard scale uncertainties may not capture the full systematic uncertainty arising from different scale choices used in their MC production. The proposed method to empirically measure and account for this additional uncertainty source is sound.
+
+The main challenges will be:
+
+\begin{itemize}
+    \item Low statistics in the boosted region for SM samples
+    \item Ensuring fair comparison between samples with different filters
+    \item Validating that the relative difference measured in SM samples applies to EFT samples
+\end{itemize}
+
+Looking at my code, this would likely require modifications to the $calculate_scale_uncertainty()$ function in systematics.py to incorporate this additional uncertainty source into the envelope calculation.
+
+
+
+
+\end{document}
