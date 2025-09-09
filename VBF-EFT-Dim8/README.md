@@ -2,6 +2,10 @@
 
 Main analysis
 
+## Working Directory
+
+Go to: /data/atlas/tamezza/MyEasyJet/Barista/bbbbarista/bbbbarista
+
 
 # Scale Uncertainty Choice
 
