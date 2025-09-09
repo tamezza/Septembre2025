@@ -2,6 +2,55 @@
 
 Track the activities of the month
 
+
+# Bjets
+
+## Codes
+
+## Plots
+
+## Documentation
+
+
+# EFT
+
+## Codes
+
+## Plots
+
+## Documentation
+
+# ITK
+
+## Codes
+
+## Plots
+
+## Documentation
+
+
+# Thesis
+
+## Chapters
+
+## Plots
+
+
+# Teaching
+
+## TD
+
+## TP
+
+
+# Links
+
+
+# Comments
+
+
+# Git
+
 ## ✅ Safe option (merge the remote changes into your local branch)
 
 ```bash
@@ -73,49 +122,3 @@ git push origin main --force
 ```
 
 ⚠️ This will delete commits that exist only on GitHub, so use it carefully (especially if others are working on the repo).
-
-# Bjets
-
-## Codes
-
-## Plots
-
-## Documentation
-
-
-# EFT
-
-## Codes
-
-## Plots
-
-## Documentation
-
-# ITK
-
-## Codes
-
-## Plots
-
-## Documentation
-
-
-# Thesis
-
-## Chapters
-
-## Plots
-
-
-# Teaching
-
-## TD
-
-## TP
-
-
-# Links
-
-
-# Comments
-
